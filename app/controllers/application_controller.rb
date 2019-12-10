@@ -9,8 +9,8 @@ class ApplicationController < ActionController::API
     end
 
     def secret_key
-        'bjdhfbshjfhjsfbjhfhjbshjf'
-        # Rails.application.credentials.secret_key
+        # 'bjdhfbshjfhjsfbjhfhjbshjf'
+        Rails.application.credentials.secret_key
     end 
 
     def current_user
