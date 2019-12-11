@@ -1,6 +1,6 @@
 class AuthController < ApplicationController
     def login
-    #  byebug
+     byebug
         user = User.find_by(username: params[:username])
         byebug
         if user 
