@@ -1,8 +1,6 @@
 class DailyIntakesController < ApplicationController
     def index
         daily_intakes = DailyIntake.all 
-        
-
         render json: current_user.daily_intakes
     end
 
@@ -25,9 +23,7 @@ class DailyIntakesController < ApplicationController
 
     def destroy
         daily_intake = DailyIntake.find(params[:id])
-      
         daily_intake.destroy
-        
     end
 
     private 

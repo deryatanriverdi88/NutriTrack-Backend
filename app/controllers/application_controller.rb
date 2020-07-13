@@ -5,17 +5,19 @@ class ApplicationController < ActionController::API
     end
 
     def encoded_token(payload)
+
         JWT.encode(payload, secret_key, "HS256")
     end
 
     def secret_key
+        # "ghggygfygtg"
         Rails.application.credentials.secret_key
     end 
 
     def current_user
         token = request.headers["Authorization"]
         begin
-            decoded_token = JWT.decode(token, 'secretkey', true, {algorithm: 'HS256'})
+            decoded_token = JWT.decode(token, secret_key, true, {algorithm: 'HS256'})
             return  User.find(decoded_token[0]["user_id"])
         rescue 
             return nil
