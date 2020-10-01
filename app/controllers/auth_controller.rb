@@ -12,11 +12,11 @@ class AuthController < ApplicationController
                 render json: { token: encoded_token(user_payload(user)), current_user: user}
 
             else
-                render json: {error: "NICE TRY BUDDY, NICE TRY! THANK YOU, DON'T COME AGAIN ✋🏽"}
+                render json: {error: "INCORRECT INFIORMATION, PLEASE TRY AGAIN"}
             end
            
         else  
-            render json: {error: "HIMMMM LETS THINK WHERE DID YOU SCREW UP? 🤔"}
+            render json: {error: "INCORRECT INFIORMATION, PLEASE TRY AGAIN"}
         end 
     end
 
